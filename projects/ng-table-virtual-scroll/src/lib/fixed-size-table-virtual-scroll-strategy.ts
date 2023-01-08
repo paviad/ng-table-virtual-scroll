@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { distinctUntilChanged } from 'rxjs/operators';
+import { distinctUntilChanged } from 'rxjs';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { CdkVirtualScrollViewport, VirtualScrollStrategy } from '@angular/cdk/scrolling';
 import { ListRange } from '@angular/cdk/collections';
@@ -11,7 +11,7 @@ export interface TSVStrategyConfigs {
   bufferMultiplier: number;
 }
 
-@Injectable()
+// @Injectable()
 export class FixedSizeTableVirtualScrollStrategy implements VirtualScrollStrategy {
   private rowHeight!: number;
   private headerHeight!: number;

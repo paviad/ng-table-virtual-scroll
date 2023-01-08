@@ -19,7 +19,7 @@ import {
   take,
   takeUntil,
   tap
-} from 'rxjs/operators';
+} from 'rxjs';
 import { TableVirtualScrollDataSource } from './table-data-source';
 import { MatTable } from '@angular/material/table';
 import { FixedSizeTableVirtualScrollStrategy } from './fixed-size-table-virtual-scroll-strategy';
@@ -30,8 +30,8 @@ export function _tableVirtualScrollDirectiveStrategyFactory(tableDir: TableItemS
   return tableDir.scrollStrategy;
 }
 
-const stickyHeaderSelector = '.mat-header-row .mat-table-sticky, .mat-header-row.mat-table-sticky';
-const stickyFooterSelector = '.mat-footer-row .mat-table-sticky, .mat-header-row.mat-table-sticky';
+const stickyHeaderSelector = '.mat-mdc-header-row .mat-mdc-table-sticky, .mat-mdc-header-row.mat-mdc-table-sticky';
+const stickyFooterSelector = '.mat-mdc-footer-row .mat-mdc-table-sticky, .mat-mdc-header-row.mat-mdc-table-sticky';
 
 const defaults = {
   rowHeight: 48,
@@ -82,8 +82,7 @@ export class TableItemSizeDirective implements OnChanges, AfterContentInit, OnDe
   private stickyPositions: Map<HTMLElement, number>;
   private resetStickyPositions = new Subject<void>();
 
-  constructor(private zone: NgZone) {
-  }
+  constructor(private zone: NgZone) {}
 
   ngOnDestroy() {
     this.destroyed$.next();

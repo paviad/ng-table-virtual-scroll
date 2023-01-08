@@ -10,19 +10,20 @@
     "module": "es2020",
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2015",
+    "target": "ES2022",
     "typeRoots": [
       "node_modules/@types"
     ],
     "lib": [
-      "es2018",
+      "es2021",
       "dom"
     ],
     "paths": {
       "ng-table-virtual-scroll": [
         "projects/ng-table-virtual-scroll/src/public-api.ts"
       ]
-    }
+    },
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

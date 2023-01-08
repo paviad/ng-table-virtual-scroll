@@ -1,5 +1,5 @@
 import { BehaviorSubject, combineLatest, merge, Observable, of, ReplaySubject, Subject, Subscription } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map } from 'rxjs';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
