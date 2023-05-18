@@ -24,7 +24,7 @@ export class FixedSizeTableVirtualScrollStrategy implements VirtualScrollStrateg
 
   public renderedRangeStream = new BehaviorSubject<ListRange>({start: 0, end: 0});
 
-  public scrolledIndexChange = this.indexChange.pipe(distinctUntilChanged());
+  public scrolledIndexChange = this.indexChange.asObservable().pipe(distinctUntilChanged());
 
   get dataLength(): number {
     return this._dataLength;

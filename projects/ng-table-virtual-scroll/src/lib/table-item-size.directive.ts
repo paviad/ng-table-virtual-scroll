@@ -164,6 +164,7 @@ export class TableItemSizeDirective<T = unknown> implements OnChanges, AfterCont
 
     dataSource
       .dataToRender$
+      .asObservable()
       .pipe(
         distinctUntilChanged(),
         takeUntil(this.dataSourceChanges),
